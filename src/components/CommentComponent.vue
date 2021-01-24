@@ -10,10 +10,10 @@
           <p>{{ commentProps.creatorId }}</p>
         </div>
         <div class="col-4 text-center py-4">
-          <button type="button" class="btn btn-outline-primary m-1">
+          <button type="button" class="btn btn-outline-warning m-1">
             Edit
           </button>
-          <button type="button" class="btn btn-outline-primary m-1">
+          <button type="button" class="btn btn-outline-danger m-1">
             Delete
           </button>
         </div>

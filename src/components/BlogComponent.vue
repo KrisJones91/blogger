@@ -1,20 +1,32 @@
 <template>
   <div class="BlogComponent col-4 ">
-    <router-link :to="{ name: 'BlogPage', params: {id: blogProp.id } }">
-      <div class="card text-center m-2">
-        <img class="card-top">
+    <div class="card text-center m-2">
+      <div class="card-top">
         <h6 class="py-2">
-          <b>
-            {{ blogProp.title }}
-          </b>
+          {{ blogProp.title }}
         </h6>
-        <div class="card-body">
-          <p class="card-text" v-if="blogProp.creator.name">
-            By: {{ blogProp.creator.name }}
-          </p>
+        <router-link :to="{ name: 'BlogPage', params: {id: blogProp.id } }">
+          <h6>
+            View
+          </h6>
+        </router-link>
+      </div>
+      <div class="card-body">
+        <div class="row justify-content-center">
+          <button type="button" class="btn btn-outline-warning m-1">
+            Edit
+          </button>
+          <button type="button" class="btn btn-outline-danger m-1">
+            Delete
+          </button>
         </div>
       </div>
-    </router-link>
+      <div class="card-footer">
+        <p v-if="blogProp.creator.name">
+          By: {{ blogProp.creator.name }}
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 

@@ -16,11 +16,13 @@
         <div class="card">
           <div class="card-top m-2">
             <h3>Comments</h3>
-            <div>
-              <input placeholder="add comment here..." />
+            <div class="m-2">
+              <input type="text" class="form-control" placeholder="add comment here..." />
             </div>
             <div>
-              <button>Add Comment</button>
+              <button type="button" class="btn btn-outline-primary">
+                Add Comment
+              </button>
             </div>
             <div class="row">
               <CommentComponent v-for="comment in state.comments" :key="comment.id" :comment-props="comment" />
