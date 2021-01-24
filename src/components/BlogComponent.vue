@@ -2,21 +2,21 @@
   <div class="BlogComponent col-4 ">
     <div class="card text-center m-2">
       <div class="card-top">
-        <h6 class="py-2">
+        <h3 class="py-2" :contenteditable="state.editBlog" @blur="editBlog">
           {{ blogProp.title }}
-        </h6>
-        <router-link :to="{ name: 'BlogPage', params: {id: blogProp.id } }">
-          <h6>
-            View
-          </h6>
-        </router-link>
+        </h3>
       </div>
+      <router-link :to="{ name: 'BlogPage', params: {id: blogProp.id } }">
+        <h6>
+          View
+        </h6>
+      </router-link>
       <div class="card-body">
         <div class="row justify-content-center">
-          <button type="button" class="btn btn-outline-warning m-1">
+          <button type="button" class="btn btn-outline-warning m-1" v-if="state.account.id == blogProp.creatorId" @click="state.editBlog = !state.editBlog">
             Edit
           </button>
-          <button type="button" class="btn btn-outline-danger m-1">
+          <button type="button" class="btn btn-outline-danger m-1" v-if="state.account.id == blogProp.creatorId" @click="deleteBlog">
             Delete
           </button>
         </div>
