@@ -99,6 +99,9 @@ export default {
 .modal-title{
   color: rgb(234, 199, 39);
 }
+.close{
+  color:  rgb(240, 5, 136);
+}
 .create-btn{
   background-color: rgb(234, 199, 39);
   color: rgb(240, 5, 136);
