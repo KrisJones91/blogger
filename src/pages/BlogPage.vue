@@ -24,9 +24,7 @@
                 Add Comment
               </button>
             </div>
-            <div class="row">
-              <CommentComponent v-for="comment in state.comments" :key="comment.id" :comment-props="comment" />
-            </div>
+            <CommentComponent v-for="comment in state.comments" :key="comment.id" :comment-props="comment" />
           </div>
         </div>
       </div>

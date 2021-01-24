@@ -3,11 +3,10 @@
     <div class="card m-2">
       <div class="row pt-2">
         <div class="col-4 py-4">
-          <p> comment </p>
           <p> {{ commentProps.body }}</p>
         </div>
         <div class="col-4 py-4">
-          <p>{{ commentProps.creatorId }}</p>
+          <p>{{ commentProps.creator.name }}</p>
         </div>
         <div class="col-4 text-center py-4">
           <button type="button" class="btn btn-outline-warning m-1">
