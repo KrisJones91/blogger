@@ -1,5 +1,5 @@
 <template>
-  <div class="BlogComponent col-4 ">
+  <div class="BlogComponent col-6 align-items-center ">
     <div class="card text-center m-3">
       <div class="card-top p-2">
         <h3 class="py-2" :contenteditable="state.editBlog" @blur="editBlog">
@@ -8,9 +8,9 @@
       </div>
       <div class="card-body">
         <router-link :to="{ name: 'BlogPage', params: {id: blogProp.id } }">
-          <h6 class="view">
+          <h5 class="view">
             View
-          </h6>
+          </h5>
         </router-link>
         <div class="row justify-content-center">
           <button type="button" class="btn btn-outline-warning m-1" v-if="state.account.id == blogProp.creatorId" @click="state.editBlog = !state.editBlog">
@@ -23,7 +23,7 @@
       </div>
       <div class="card-footer">
         <p v-if="blogProp.creator.name">
-          By: <b>{{ blogProp.creator.name }}</b>
+          Writer | <b>{{ blogProp.creator.name }}</b>
         </p>
       </div>
     </div>
@@ -69,5 +69,24 @@ export default {
 <style scoped>
 .view{
   cursor: pointer;
+  color: rgb(234, 199, 39);
+}
+.view:hover{
+  color: rgb(240, 5, 136);
+}
+.card-top{
+  background-color: rgb(49, 1, 121);
+  color: rgb(234, 199, 39);
+  border: outset  rgb(240, 5, 136);
+}
+.card-body{
+  background-color: rgb(118, 54, 192);
+  border: inset rgb(240, 5, 136);
+}
+.card-footer{
+  background-color: rgb(49, 1, 121);
+  color: rgb(234, 199, 39);
+  border: outset rgb(240, 5, 136);
+  /* text-shadow: 1px 2px 1px rgb(173, 5, 240); */
 }
 </style>

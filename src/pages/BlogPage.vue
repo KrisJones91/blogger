@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-page container-fluid">
+  <div class="blog-page container-fluid bg-image">
     <div class="row p-3">
       <div class="col">
         <router-link :to="{ name: 'Home' }">
@@ -76,3 +76,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.bg-image{
+    background-image: url('https://www.10wallpaper.com/wallpaper/1920x1200/1908/2019_Purple_Abstract_4K_HD_Design_1920x1200.jpg');
+}
+</style>

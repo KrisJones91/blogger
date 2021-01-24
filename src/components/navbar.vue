@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
         <h3 class="title">
@@ -45,7 +45,7 @@
           Login
         </button>
 
-        <div class="dropdown" v-else>
+        <div class="dropdown account-main" v-else>
           <div
             class="dropdown-toggle"
             @click="state.dropOpen = !state.dropOpen"
@@ -56,7 +56,7 @@
               height="40"
               class="rounded"
             />
-            <span class="mx-3">{{ user.name }}</span>
+            <span class="mx-3 account-name">{{ user.name }}</span>
           </div>
           <div
             class="dropdown-menu p-0 list-group w-100"
@@ -121,14 +121,29 @@ export default {
 a:hover {
   text-decoration: none;
 }
-.nav-link{
-  text-transform: uppercase;
-}
+
 .nav-item .nav-link.router-link-exact-active{
-  color: var(--primary);
+  color: rgb(226, 10, 53);
+}
+.nav-link{
+  color:rgb(234 , 199, 39)
+}
+.nav-item{
+  font-family: 'DM Sans', sans-serif;
 }
 .title{
-  font-family: 'Vibes', cursive;
-  color: aqua;
+  font-family: 'Damion', cursive;
+  color: rgb(234 , 199, 39);
+  text-shadow: 1px 1px 2px rgb(226 , 10, 53);
 }
+.navbar{
+  background-color: rgb(44, 0, 115);
+}
+.account-name{
+  color: white;
+}
+.account-main{
+  cursor: pointer;
+}
+
 </style>

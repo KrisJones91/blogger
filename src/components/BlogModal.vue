@@ -9,7 +9,7 @@
          aria-hidden="true"
     >
       <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content bg-modal">
           <div class="modal-header">
             <h5 class="modal-title">
               Create a NEW Blog!
@@ -48,7 +48,7 @@
                               v-model="state.newBlog.body"
                     ></textarea>
                     <div class="row justify-content-center">
-                      <button class="btn btn-success " type="submit">
+                      <button class="btn create-btn" type="submit">
                         Create
                       </button>
                     </div>
@@ -91,3 +91,22 @@ export default {
   }
 }
 </script>
+<style scoped>
+.bg-modal{
+  background-color: rgb(56, 10, 99);
+
+}
+.modal-title{
+  color: rgb(234, 199, 39);
+}
+.create-btn{
+  background-color: rgb(234, 199, 39);
+  color: rgb(240, 5, 136);
+}
+.create-btn:hover{
+  background-color: rgb(240, 5, 136);
+  color: rgb(234, 199, 39);
+  box-shadow: 0px 1px 30px gray;
+
+}
+</style>

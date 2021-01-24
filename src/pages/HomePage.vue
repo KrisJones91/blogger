@@ -1,5 +1,5 @@
 <template>
-  <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center">
+  <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center home-bg">
     <div class="row m-3">
       <div class="col text-center">
         <h1 class="main-text">
@@ -10,8 +10,8 @@
     <div class="row justify-content-center m-4">
       <div class="col ">
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
-          Create Blog
+        <button type="button" class="btn btn-color btn-lg" data-toggle="modal" data-target="#modelId">
+          Create
         </button>
         <BlogModal />
       </div>
@@ -50,10 +50,31 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
+.home-bg{
+  background-image: url('https://www.10wallpaper.com/wallpaper/1920x1200/1908/2019_Purple_Abstract_4K_HD_Design_1920x1200.jpg');
+  background-position-x: -0%;
+  background-position-y: -0%;
+}
 .main-text{
-  font-family: 'Vibes', cursive;
-  color: black;
+  font-family: 'Damion', cursive;
+  color: rgb(240, 5, 136);
+  font-size: 150px !important;
+  /* -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgb(44, 7, 3); */
+  text-shadow: 3px 1px 5px rgb(234, 199, 39);
+}
+.btn-color{
+  color: rgb(240, 5, 136);
+  display: block;
+  background-color: rgb(234, 199, 39);
+  border-color: purple;
+  font-family: 'DM Sans', sans-serif;
+}
+.btn:hover{
+  background-color: rgb(240, 5, 136);
+  color: rgb(234, 199, 39);
+  box-shadow: 0px 1px 30px gray;
 
 }
 </style>
