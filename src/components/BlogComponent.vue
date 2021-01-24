@@ -1,17 +1,17 @@
 <template>
   <div class="BlogComponent col-4 ">
-    <div class="card text-center m-2">
-      <div class="card-top">
+    <div class="card text-center m-3">
+      <div class="card-top p-2">
         <h3 class="py-2" :contenteditable="state.editBlog" @blur="editBlog">
           {{ blogProp.title }}
         </h3>
       </div>
-      <router-link :to="{ name: 'BlogPage', params: {id: blogProp.id } }">
-        <h6>
-          View
-        </h6>
-      </router-link>
       <div class="card-body">
+        <router-link :to="{ name: 'BlogPage', params: {id: blogProp.id } }">
+          <h6 class="view">
+            View
+          </h6>
+        </router-link>
         <div class="row justify-content-center">
           <button type="button" class="btn btn-outline-warning m-1" v-if="state.account.id == blogProp.creatorId" @click="state.editBlog = !state.editBlog">
             Edit
@@ -23,7 +23,7 @@
       </div>
       <div class="card-footer">
         <p v-if="blogProp.creator.name">
-          By: {{ blogProp.creator.name }}
+          By: <b>{{ blogProp.creator.name }}</b>
         </p>
       </div>
     </div>
@@ -66,3 +66,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.view{
+  cursor: pointer;
+}
+</style>

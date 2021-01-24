@@ -1,5 +1,12 @@
 <template>
   <div class="blog-page container-fluid">
+    <div class="row p-3">
+      <div class="col">
+        <router-link :to="{ name: 'Home' }">
+          <i type="button" class="fas fa-angle-double-left fa-3x"></i>
+        </router-link>
+      </div>
+    </div>
     <div class="row justify-content-center m-5">
       <div class="col-6 text-center">
         <h3>{{ blog.title }}</h3>
@@ -17,10 +24,10 @@
           <div class="card-top m-2">
             <h3>Comments</h3>
             <div class="m-2">
-              <input type="text" class="form-control" placeholder="add comment here..." />
+              <input type="text" class="form-control" v-model="state.newComment.body" placeholder="add comment here..." />
             </div>
             <div>
-              <button type="button" class="btn btn-outline-primary">
+              <button type="button" class="btn btn-outline-primary" @click="createComment">
                 Add Comment
               </button>
             </div>
@@ -36,14 +43,17 @@
 import { computed, onMounted, reactive } from 'vue'
 import { useRoute } from 'vue-router'
 import { AppState } from '../AppState'
+import { logger } from '../utils/Logger'
 import { blogsService } from '../services/BlogsService'
 import { commentService } from '../services/CommentService'
 export default {
   name: 'BlogPage',
+
   setup() {
     const route = useRoute()
     const state = reactive({
-      comments: computed(() => AppState.comments)
+      comments: computed(() => AppState.comments),
+      newComment: { blog: route.params.id }
 
     })
 
@@ -53,8 +63,15 @@ export default {
     })
     return {
       state,
-      blog: computed(() => AppState.activeBlog)
-
+      blog: computed(() => AppState.activeBlog),
+      async createComment() {
+        try {
+          await commentService.createComment(state.newComment)
+          await commentService.getComments(route.params.id)
+        } catch (error) {
+          logger.error(error)
+        }
+      }
     }
   }
 }

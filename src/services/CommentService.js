@@ -9,20 +9,20 @@ class CommentService {
   }
 
   async createComment(commentData) {
-    const res = await api.post('/api/comment', commentData)
+    const res = await api.post('/api/comments', commentData)
     console.log(res)
     this.getComments()
   }
 
   async editComment(commentId, newComment) {
     const commentData = { title: newComment }
-    const res = await api.put('/api/comment/' + commentId, commentData)
+    const res = await api.put('/api/comments/' + commentId, commentData)
     console.log(res)
     this.getComments()
   }
 
   async deleteComment(commentId) {
-    await api.delete('/api/comment/' + commentId)
+    await api.delete('/api/comments/' + commentId)
     this.getComments()
   }
 }

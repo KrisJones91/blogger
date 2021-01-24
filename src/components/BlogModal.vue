@@ -12,42 +12,48 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">
-              Create your Blog HERE!
+              Create a NEW Blog!
             </h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <form class="form-inline" @submit.prevent="createBlog">
-              <div class="form-group">
-                <input type="text"
-                       name="imgUrl"
-                       id="imgUrl"
-                       class="form-control"
-                       placeholder="Enter img url"
-                       aria-describedby="helpId"
-                       v-model="state.newBlog.imgUrl"
-                >
-                <input type="text"
-                       name="title"
-                       id="title"
-                       class="form-control"
-                       placeholder="Enter post Title"
-                       aria-describedby="helpId"
-                       v-model="state.newBlog.title"
-                >
-                <input type="text"
-                       name="body"
-                       id="body"
-                       class="form-control"
-                       placeholder="body..."
-                       aria-describedby="helpId"
-                       v-model="state.newBlog.body"
-                >
-                <button class="btn btn-success" type="submit">
-                  Create
-                </button>
+            <form class="" @submit.prevent="createBlog">
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <input type="text"
+                           name="imgUrl"
+                           id="imgUrl"
+                           class="form-control text-center m-1"
+                           placeholder="Image URL"
+                           aria-describedby="helpId"
+                           v-model="state.newBlog.imgUrl"
+                    >
+                    <input type="text"
+                           name="title"
+                           id="title"
+                           class="form-control text-center m-1"
+                           placeholder="Title"
+                           aria-describedby="helpId"
+                           v-model="state.newBlog.title"
+                    >
+                    <textarea type="text"
+                              name="body"
+                              id="body"
+                              class="form-control text-center m-1"
+                              placeholder="body..."
+                              aria-describedby="helpId"
+                              v-model="state.newBlog.body"
+                    ></textarea>
+                    <div class="row justify-content-center">
+                      <button class="btn btn-success " type="submit">
+                        Create
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </form>
           </div>

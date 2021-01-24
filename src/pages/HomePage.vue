@@ -1,5 +1,12 @@
 <template>
   <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center">
+    <div class="row m-3">
+      <div class="col text-center">
+        <h1 class="main-text">
+          Blog it!
+        </h1>
+      </div>
+    </div>
     <div class="row justify-content-center m-4">
       <div class="col ">
         <!-- Button trigger modal -->
@@ -44,7 +51,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.home{
- cursor: pointer;
+.main-text{
+  font-family: 'Vibes', cursive;
+  color: black;
+
 }
 </style>
