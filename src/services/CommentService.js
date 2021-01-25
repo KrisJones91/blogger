@@ -14,11 +14,12 @@ class CommentService {
     this.getComments()
   }
 
-  async editComment(commentId, newComment) {
-    const commentData = { title: newComment }
+  async editComment(blog, commentId, newComment) {
+    // had title and needed body cause TITLE is not a property of Comments
+    const commentData = { blog, body: newComment }
     const res = await api.put('/api/comments/' + commentId, commentData)
     console.log(res)
-    this.getComments()
+    this.getComments(blog)
   }
 
   async deleteComment(commentId) {

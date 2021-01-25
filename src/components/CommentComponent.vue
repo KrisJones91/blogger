@@ -46,7 +46,7 @@ export default {
       state,
       async editComment(event) {
         try {
-          commentService.editComment(props.commentProps.id, event.target.innerText)
+          commentService.editComment(route.params.id, props.commentProps.id, event.target.innerText)
           await commentService.getComments(route.params.id)
         } catch (error) {
           logger.error(error)
