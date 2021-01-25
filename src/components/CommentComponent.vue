@@ -46,6 +46,7 @@ export default {
       state,
       async editComment(event) {
         try {
+          // needed route.params.id passed in the editComment in order to get the blogId
           commentService.editComment(route.params.id, props.commentProps.id, event.target.innerText)
           await commentService.getComments(route.params.id)
         } catch (error) {
