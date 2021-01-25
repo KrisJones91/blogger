@@ -16,7 +16,7 @@ class CommentService {
 
   // passed blog (could also be ID) because blog needed to be passed in order to recognize which blogId was necessary
   async editComment(blog, commentId, newComment) {
-    // had title and needed body cause TITLE is not a property of Comments
+    // had title and needed body cause TITLE is not a property of Comments, BODY is a property
     const commentData = { blog, body: newComment }
     const res = await api.put('/api/comments/' + commentId, commentData)
     console.log(res)
